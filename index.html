@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,500;0,600;0,800;1,900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/b5e12a678f.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/css/style.css">
+
+    <title>Smart Home</title>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="logo-div">
+                    <img src="/pic/smart-home-logo.png" alt="">
+                    <span>Smart home</span>
+            </div>
+            <div class="contact">
+                <span><a href="#US">About Us</a></span>
+                <span><a href="#How">How It Works</a></span>
+                <span><a href="#ser">services</a></span>
+                <span><a href="#help">Help</a></span>
+                
+                <button id="log-in"><a href="/login.html" target="_blank">log in</a></button>
+            </div>
+        </div>
+        <div class="main-land">
+            <div class="left">
+                <h1>Control<br>your home</h1>
+                <p>A smart house with advanced features that you can control a mobile application</p>
+                <button id="main-download"><i class="fa fa-apple" style="margin-right: 10px;"></i>Download App</button>
+                <div class="flow tem "><i class="fa-solid fa-temperature-three-quarters"></i><span>Temperature <br> control</span></div>
+                <div class="flow sma "><i class="fa-regular fa-lightbulb"></i><span>Smart <br> spotlights</span></div>
+            </div>
+            <div class="right">
+                <img src="/pic/land.png" alt="">
+                <div class="flow ala "><i class="fa-regular fa-bell"></i><span>Alarm <br> System</span></div>
+                <div class="flow smok "><i class="fa-solid fa-smog"></i><span>Smoke <br> Detection</span></div>
+
+            </div>
+            <img id="phone" src="/pic/95e1fc18246aa5a9d4bf85ff85e384c8.png" alt="">
+        </div>
+        <div class="easy">
+            <h1>Easy Controling</h1>
+            <div class="line"></div>
+            <div class="line2"></div>
+        </div>
+        <div class="video" style="text-align: center;" id="How">
+            <div  id="video_text">How it Work
+                <p>watch the video presentation of our app to use how it work</p>
+                <div class="ball"><i class="fa-regular fa-circle-play"></i></div>
+            </div>
+            <video width="90%" height="90%" onclick="videoControl()">
+                <source src="/videos/Keemple Smart Home - 3D animation.mp4" type="video/mp4" />
+               </video>
+        </div>
+        <div class="statistic" id="US">
+            <div class="about">About Us</div>
+            <div class="one">
+                <div class="box year"><span>2019</span>
+                <p>the year our company was found</p></div>
+                <div class="box projects"><span>500+</span>
+                <p>implemented projects for our clinets</p></div>
+            </div>
+            <div class="two">
+                <div class="box spec"><span>260+</span>
+                <p>the Number of specificts in our company</p></div>
+                <div class="box ser">
+                    <span>5</span>
+                    <p>we give a 5 year garantie on all our services</p>
+                </div>
+            </div>
+            <div class="three">
+                <img src="/pic/static_phone.png" alt="">
+            </div>
+        </div>
+        <div class="services" id="ser">
+            <div class="header">
+                <h1>Add <br> Your Services</h1>
+                <div class="arr">
+                    <div class="rigth-arr"><i class="fa fa-arrow-right"></i></div>
+                <div class="left-arr"><i class="fa fa-arrow-left"></i></div>
+                </div>
+            </div>
+            <div class="boxs">
+                <div class="boxx camera">
+                    <img src="/pic/camera.jpeg" alt="">
+                    <p>Outdoors <br> Camera</p>
+                </div>
+                <div class="boxx robot">
+                    <img src="/pic/robot.jpeg" alt="">
+                    <p>Robot<br> Cleaner</p>
+                </div>
+                <div class="boxx spotlight">
+                    <img src="/pic/spotlight.jpeg" alt="">
+
+                    <p>Smart<br> Spotlight</p>
+
+                </div>
+                <div class="boxx router">
+                    <img src="/pic/images.jpeg" alt="">
+                    <p>Wifi<br> Router</p>
+
+                </div>
+                <div class="boxx alarm ">
+                    <img src="/pic/Alarm.jpeg" alt="">
+                    <p>Alarm<br>System</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="download-app">
+            <div class="images">
+                <img src="/pic/app_store.png" id="app_stor" alt="">
+                <img src="/pic/play_store.png" alt="">
+            </div>
+            <div class="text">
+                <h2>Dwonload our App from App store & play store</h2>
+                <p>start using our app now,easily and confortably</p>
+                <button id="main-download"><i class="fa fa-apple" style="margin-right: 10px;"></i>Download App</button>
+            </div>
+        </div>
+        <div class="footer" id="help">
+            <div class="f1">
+                <h1>SMART HOME</h1>
+            </div>
+            <div class="f2"> <h3>Resources</h3>
+            <p>tutorial</p>
+            <p>learn</p>
+            <p>Help & support</p>
+            <p>Blog</p>
+            </div>
+            <div class="f3">
+                <h3>Company</h3>
+                <p>About</p>
+                <p>careers</p>
+                <p>privacy</p>
+                <p>Terms</p>
+            </div>
+            <div class="f4">
+                <h1>Subscribe to News</h1>
+                <input type="text" placeholder="your e-mail">
+                <span><i class="fa fa-arrow-right"></i></span>
+                <div class="icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/mian.js"></script>
+</body>
+</html>
