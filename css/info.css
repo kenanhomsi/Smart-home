@@ -1,0 +1,274 @@
+:root{
+    --main-green:#24B940;
+    --prim-color: linear-gradient(70deg, #fcfbfb, #C7C5E3);
+}
+html {
+    scroll-behavior: smooth;
+  }
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Rubik', sans-serif;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 20%, rgba(199,197,227,1) 19%);
+   
+   
+}
+.container{
+    background-image: var(--prim-color);
+   /* background-color: #FFFEFF;*/
+    padding: 50px 90px;
+    border: none;
+    overflow: hidden;
+}
+/*nav*/
+.nav{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.nav .logo-div{
+    height: 60px;
+    width: 134px;
+    font-size: 20px;
+}
+.logo-div img{
+    width: 185%;
+
+    z-index: -1;
+    position: relative;
+    top: -51px;
+    left: -91px;
+}
+.logo-div span{
+    position: absolute;
+    top: 12px;
+    left: 163px;
+    font-size: 22px;
+}
+.nav span{
+    margin-right:20px ;
+    font-size: 16px;
+    font-weight: 600;
+}
+/*end nav*/
+/*upprer*/
+.upprer{
+    margin-top: 90px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+.left{
+    width: 50%;
+}
+.left .text , .left .temp ,.gas ,.flame{
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 10px 20px;
+    margin-top: 15px;
+}
+.left .text h1{
+        font-size: 39px;
+        font-weight: 400;
+}
+.left .text h1 span{
+    color: var(--main-green);
+}
+#main-download{
+    margin-top: 30px;
+    border: none;
+    width: 182px;
+    color: white;
+    font-size: 18px;
+    height: 49px;
+    background-color: var(--main-green);
+    border-radius: 7px;
+    cursor: pointer;
+}
+.left .temp{
+display: flex;
+flex-direction: row;
+gap: 10px;
+}
+
+.t1 h2{
+font-weight: 400;
+}
+.t1 div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #24B940;
+}
+
+.t2{
+ margin-left: 30px;
+ position: relative;
+}
+.t2::after{
+    position: absolute;
+    content: "";
+    width: 84px;
+    height: 84px;
+    background-color: #24B940;
+    top: 54px;
+    border-radius: 60px;
+    left: 64px;
+}
+.t2 span{
+    position: absolute;
+    top: 81px;
+    left: 85px;
+    color: white;
+    z-index: 1;
+    font-size: 20px;
+}
+.right{
+    padding-top: 60px;
+width: 50%;
+}
+.right img{
+width: 100%;
+}
+.sensors{
+ display: flex;
+ flex-direction: row;
+ gap: 20px;
+}
+.gas ,.flame{
+width: 50%;
+font-size: 20px;
+}
+.gas div ,.flame div{
+    color: var(--main-green);
+
+}
+.gas div div  ,.flame div div{
+    color: black;
+margin-top: 10px;
+}
+/*end upprer*/
+/*down*/
+.down{
+    display: flex;
+    gap: 25px;
+}
+.box{
+    width: 25%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #fff;
+}
+.switch{
+    background-color: #C7C5E3;
+    width: 28px;
+    height: 49px;
+    position: relative;
+    top: -10px;
+    border-radius: 25px;
+}
+.switch:hover{
+    cursor: pointer;
+}
+.switch span{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 21px;
+    border-radius: 16px;
+    left: 4px;
+    z-index: 1;
+    background-color: #eee;
+    color: #eee;
+}
+/*down*/
+@media (max-width:840px) and (min-width:500px){
+.contact{
+    margin-top: 11px;
+}
+.left .temp,.sensors { 
+    width: 600px;
+}
+.down {
+    margin-top: 12px;
+    gap: 10px;
+}
+.box{
+    height: 80px;
+}
+.t2::after {
+    top: 63px;
+    border-radius: 60px;
+    left: 77px;
+}
+.t2 span {
+    position: absolute;
+    top: 89px;
+    left: 96px;
+}
+#air span{
+    left: 2px;
+}
+}
+@media (max-width:499px) {
+.contact{
+display: none;  
+}  
+.container {
+    padding: 20px 30px;
+}
+.logo-div img {
+    width: 146%;
+    top: -26px;
+    left: -32px;
+}
+.logo-div span {
+margin-left: 10px;
+}
+.left .text h1 {
+    font-size: 25px;
+}
+.right img {
+    width: 147%;
+    margin-left: -40px;
+}
+.left .temp,.sensors {
+ 
+    width: 208%;
+}
+#main-download {
+    width: 120px;
+}
+.t2 img{
+    width: 114%;
+}
+.t2::after {
+    width: 50px;
+    height: 50px;
+    top: 33px;
+    border-radius: 60px;
+    left: 38px;
+}
+.t2 span {
+    top: 46px;
+    left: 48px;
+    font-size: 14px;
+}
+.down {
+    margin-top: 10px;
+    display: grid;
+     grid-template-columns: 50% 50%;
+}
+.box {
+    width: auto;
+}
+}
