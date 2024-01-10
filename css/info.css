@@ -157,7 +157,17 @@ margin-top: 10px;
 /*down*/
 .down{
     display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+.lights{
+    display: flex;
     gap: 25px;
+}
+.others{
+    display: flex;
+    gap: 25px;
+    justify-content: center;
 }
 .box{
     width: 25%;
@@ -206,14 +216,17 @@ margin-top: 10px;
     height: 80px;
 }
 .t2::after {
-    top: 63px;
+    top: 57px;
     border-radius: 60px;
-    left: 77px;
+    left: 68px;
+    width: 74px;
+    height: 74px;
 }
+
 .t2 span {
     position: absolute;
-    top: 89px;
-    left: 96px;
+    top: 81px;
+    left: 92px;
 }
 #air span{
     left: 2px;
@@ -252,21 +265,27 @@ margin-left: 10px;
     width: 114%;
 }
 .t2::after {
-    width: 50px;
+   /* width: 50px;
     height: 50px;
     top: 33px;
     border-radius: 60px;
-    left: 38px;
+    left: 38px;*/
+    display: none;
 }
 .t2 span {
-    top: 46px;
+    /*top: 46px;
     left: 48px;
-    font-size: 14px;
+    font-size: 14px;*/
+    display: none;
 }
 .down {
     margin-top: 10px;
-    display: grid;
-     grid-template-columns: 50% 50%;
+    display: flex;
+    flex-direction: row;
+}
+.lights,.others{
+    display: flex;
+    flex-direction: column;
 }
 .box {
     width: auto;

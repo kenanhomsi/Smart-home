@@ -250,7 +250,7 @@ body{
 video{
     border: none;
     border-radius: 30px;
-    
+    background-color: black;
 }
 .video{
     position: relative;
