@@ -223,7 +223,7 @@ function passwordCheck(){
     console.log(email.value);
     console.log(pass.value);
 if(email.value =="kenanhomsi@gmail.com" && pass.value=="123456789"){
-    document.getElementById("log_a").setAttribute("href","/info.html");
+    document.getElementById("log_a").setAttribute("href",".//info.html");
 }
 }
 
