@@ -6,6 +6,7 @@ function videoControl(){
     how_it_work.style.display="none";
 }
 
+
 var alarm=document.getElementById("alarm");
 var door=document.getElementById("door");
 var living_spot=document.getElementById("living_spot");
@@ -26,10 +27,11 @@ var spool_spot=document.getElementById("spool_spot");
 
 
 
-function pool_spotc(){
+
+const pool_spotc=()=>{
   let state=pool_spot.getAttribute("state");
-  console.log(state);
-  if(state =="off"){
+ 
+  if(state == "on"){
       spool_spot.style.top="5px";
       pool_spot.style.backgroundColor="#24B940";
       pool_spot.setAttribute("state","on");
@@ -39,21 +41,38 @@ function pool_spotc(){
       pool_spot.style.backgroundColor="#C7C5E3";
       pool_spot.setAttribute("state","off");
   }
-  let href=pool_spot.getAttribute("href");
-  if(href =="pool_on"){
-    var someUrl = "/pool_off";   $.ajax({                       
-      url: someUrl,  timeout: 1000  })
-      pool_spot.setAttribute("href","pool_off");
+}
+
+const pool_spotcOnclick=()=>{
+  let state=pool_spot.getAttribute("state");
+ 
+  if(state == "off"){
+      spool_spot.style.top="5px";
+      pool_spot.style.backgroundColor="#24B940";
+      pool_spot.setAttribute("state","on");
   }
   else{
-    var someUrl = "/pool_on";   $.ajax({  url: someUrl, timeout: 1000 })
-    pool_spot.setAttribute("href","pool_on");
+      spool_spot.style.top="21px";
+      pool_spot.style.backgroundColor="#C7C5E3";
+      pool_spot.setAttribute("state","off");
   }
+   state=pool_spot.getAttribute("state");
+  axios.patch('https://smarthome-api-nnmo.onrender.com/api/v1/singleService/',{
+    LED_pool_livingSensor:state
+  },{
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  }).then((com)=>{
+    console.log(com)
+
+  }).catch((err)=>{
+    console.log(err)
+  })
 }
-function Balcony_spotc(){
+const Balcony_spotc=()=>{
     let state=Balcony_spot.getAttribute("state");
-    console.log(state);
-    if(state =="off"){
+    if(state == "on"){
         sBalcony_spot.style.top="5px";
         Balcony_spot.style.backgroundColor="#24B940";
         Balcony_spot.setAttribute("state","on");
@@ -63,21 +82,123 @@ function Balcony_spotc(){
         Balcony_spot.style.backgroundColor="#C7C5E3";
         Balcony_spot.setAttribute("state","off");
     }
-    let href=Balcony_spot.getAttribute("href");
-    if(href =="Balcony_on"){
-      var someUrl = "/Balcony_off";   $.ajax({                       
-        url: someUrl,  timeout: 1000  })
-        Balcony_spot.setAttribute("href","Balcony_off");
-    }
-    else{
-      var someUrl = "/Balcony_on";   $.ajax({  url: someUrl, timeout: 1000 })
-      Balcony_spot.setAttribute("href","Balcony_on");
-    }
+
 }
-function kitchen_spotc(){
+const Balcony_spotcOnclick=()=>{
+  let state=Balcony_spot.getAttribute("state");
+  if(state == "off"){
+      sBalcony_spot.style.top="5px";
+      Balcony_spot.style.backgroundColor="#24B940";
+      Balcony_spot.setAttribute("state","on");
+  }
+  else{
+      sBalcony_spot.style.top="21px";
+      Balcony_spot.style.backgroundColor="#C7C5E3";
+      Balcony_spot.setAttribute("state","off");
+  }
+  state=Balcony_spot.getAttribute("state");
+  axios.patch('https://smarthome-api-nnmo.onrender.com/api/v1/singleService/',{
+    LED_Balcony_Sensor:state
+  },{
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  }).then((com)=>{
+    console.log(com)
+
+  }).catch((err)=>{
+    console.log(err)
+  })
+
+}
+
+const gard_right_spotc=()=>{
+  let state=gard_right_spot.getAttribute("state");
+  if(state == "on"){
+      sgard_right_spot.style.top="5px";
+      gard_right_spot.style.backgroundColor="#24B940";
+      gard_right_spot.setAttribute("state","on");
+  }
+  else{
+      sgard_right_spot.style.top="21px";
+      gard_right_spot.style.backgroundColor="#C7C5E3";
+      gard_right_spot.setAttribute("state","off");
+  }
+  
+}
+const gard_right_spotcOnclick=()=>{
+  let state=gard_right_spot.getAttribute("state");
+  if(state == "off"){
+      sgard_right_spot.style.top="5px";
+      gard_right_spot.style.backgroundColor="#24B940";
+      gard_right_spot.setAttribute("state","on");
+  }
+  else{
+      sgard_right_spot.style.top="21px";
+      gard_right_spot.style.backgroundColor="#C7C5E3";
+      gard_right_spot.setAttribute("state","off");
+  }
+  state=gard_right_spot.getAttribute("state");
+  axios.patch('https://smarthome-api-nnmo.onrender.com/api/v1/singleService/',{
+    LED_garden_right_livingSensor:state
+  },{
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  }).then((com)=>{
+    console.log(com)
+
+  }).catch((err)=>{
+    console.log(err)
+  })
+  
+}
+
+const gard_left_spotc=()=>{
+  let state=gard_left_spot.getAttribute("state");
+  if(state == "on"){
+      sgard_left_spot.style.top="5px";
+      gard_left_spot.style.backgroundColor="#24B940";
+      gard_left_spot.setAttribute("state","on");
+  }
+  else{
+      sgard_left_spot.style.top="21px";
+      gard_left_spot.style.backgroundColor="#C7C5E3";
+      gard_left_spot.setAttribute("state","off");
+  }
+ 
+}
+const gard_left_spotcOnclick=()=>{
+  let state=gard_left_spot.getAttribute("state");
+  if(state == "off"){
+      sgard_left_spot.style.top="5px";
+      gard_left_spot.style.backgroundColor="#24B940";
+      gard_left_spot.setAttribute("state","on");
+  }
+  else{
+      sgard_left_spot.style.top="21px";
+      gard_left_spot.style.backgroundColor="#C7C5E3";
+      gard_left_spot.setAttribute("state","off");
+  }
+  state=gard_left_spot.getAttribute("state");
+  axios.patch('https://smarthome-api-nnmo.onrender.com/api/v1/singleService/',{
+    LED_garden_left_Sensor:state
+  },{
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  }).then((com)=>{
+    console.log(com)
+
+  }).catch((err)=>{
+    console.log(err)
+  })
+ 
+}
+
+const kitchen_spotc=()=>{
     let state=kitchen_spot.getAttribute("state");
-    console.log(state);
-    if(state =="off"){
+    if(state == "on"){
         skitchenspot.style.top="5px";
         kitchen_spot.style.backgroundColor="#24B940";
         kitchen_spot.setAttribute("state","on");
@@ -88,22 +209,40 @@ function kitchen_spotc(){
         kitchen_spot.style.backgroundColor="#C7C5E3";
         kitchen_spot.setAttribute("state","off");
     }
-    let href=kitchen_spot.getAttribute("href");
-    if(href =="kitchen_on"){
-      var someUrl = "/kitchen_off";   $.ajax({                       
-        url: someUrl,  timeout: 1000  })
-        kitchen_spot.setAttribute("href","kitchen_off");
+
+}
+const kitchen_spotcOnclick=()=>{
+  let state=kitchen_spot.getAttribute("state");
+  if(state == "off"){
+      skitchenspot.style.top="5px";
+      kitchen_spot.style.backgroundColor="#24B940";
+      kitchen_spot.setAttribute("state","on");
+      
+  }
+  else{
+      skitchenspot.style.top="21px";
+      kitchen_spot.style.backgroundColor="#C7C5E3";
+      kitchen_spot.setAttribute("state","off");
+  }
+  state=kitchen_spot.getAttribute("state");
+  axios.patch('https://smarthome-api-nnmo.onrender.com/api/v1/singleService/',{
+    LED_kitchen_Sensor:state
+  },{
+    headers: {
+      'Authorization': `Bearer ${token}`
     }
-    else{
-      var someUrl = "/kitchen_on";   $.ajax({  url: someUrl, timeout: 1000 })
-      kitchen_spot.setAttribute("href","kitchen_on");
-    }
+  }).then((com)=>{
+    console.log(com)
+
+  }).catch((err)=>{
+    console.log(err)
+  })
+
 }
 
-function alarmc(){
+const alarmc=()=>{
   let state=alarm.getAttribute("state");
-  console.log(state);
-  if(state =="off"){
+  if(state == "on"){
       salarm.style.top="5px";
       alarm.style.backgroundColor="#24B940";
       alarm.setAttribute("state","on");
@@ -114,85 +253,81 @@ function alarmc(){
       alarm.style.backgroundColor="#C7C5E3";
       alarm.setAttribute("state","off");
   }
-  let href=alarm.getAttribute("href");
-  if(href =="alarm_on"){
-    var someUrl = "/alarm_off";   $.ajax({                       
-      url: someUrl,  timeout: 1000  })
-      alarm.setAttribute("href","alarm_off");
+
+}
+const alarmcOnclick=()=>{
+  let state=alarm.getAttribute("state");
+  if(state == "off"){
+      salarm.style.top="5px";
+      alarm.style.backgroundColor="#24B940";
+      alarm.setAttribute("state","on");
+      
   }
   else{
-    var someUrl = "/alarm_on";   $.ajax({  url: someUrl, timeout: 1000 })
-    alarm.setAttribute("href","alarm_on");
+      salarm.style.top="21px";
+      alarm.style.backgroundColor="#C7C5E3";
+      alarm.setAttribute("state","off");
   }
+  state=alarm.getAttribute("state");
+  axios.patch('https://smarthome-api-nnmo.onrender.com/api/v1/singleService/',{
+    securityStatue:state
+  },{
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  }).then((com)=>{
+    console.log(com)
+
+  }).catch((err)=>{
+    console.log(err)
+  })
+
 }
-function doorc(){
-    let state=door.getAttribute("state");
-    console.log(state);
-    if(state =="off"){
+
+const doorc=()=>{
+   let state=door.getAttribute("state");
+    if(state == "on"){
         sdoor.style.top="5px";
         door.style.backgroundColor="#24B940";
         door.setAttribute("state","on");
-        var someUrl = "/door_off";   $.ajax({  url: someUrl, timeout: 1000 })
     }
     else{
         sdoor.style.top="21px";
         door.style.backgroundColor="#C7C5E3";
         door.setAttribute("state","off");
-        var someUrl = "/door_on";   $.ajax({  url: someUrl, timeout: 1000 })
     }
 }
-function gard_right_spotc(){
-  let state=gard_right_spot.getAttribute("state");
-  if(state =="off"){
-      sgard_right_spot.style.top="5px";
-      gard_right_spot.style.backgroundColor="#24B940";
-      gard_right_spot.setAttribute("state","on");
-  }
-  else{
-      sgard_right_spot.style.top="21px";
-      gard_right_spot.style.backgroundColor="#C7C5E3";
-      gard_right_spot.setAttribute("state","off");
-  }
-  let href=gard_right_spot.getAttribute("href");
-  console.log(href);
-  if(href =="gard_rigth_on"){
-    var someUrl = "/gard_rigth_off";   $.ajax({                       
-      url: someUrl,  timeout: 1000  })
-      gard_right_spot.setAttribute("href","gard_rigth_off");
-  }
-  else{
-    var someUrl = "/gard_rigth_on";   $.ajax({  url: someUrl, timeout: 1000 })
-      gard_right_spot.setAttribute("href","gard_rigth_on");
-  }
+const doorcOnclick=()=>{
+  let state=door.getAttribute("state");
+   if(state == "off"){
+       sdoor.style.top="5px";
+       door.style.backgroundColor="#24B940";
+       door.setAttribute("state","on");
+   }
+   else{
+       sdoor.style.top="21px";
+       door.style.backgroundColor="#C7C5E3";
+       door.setAttribute("state","off");
+   }
+   state=door.getAttribute("state");
+   axios.patch('https://smarthome-api-nnmo.onrender.com/api/v1/singleService/',{
+    DoorStatue:state
+  },{
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  }).then((com)=>{
+    console.log(com)
+
+  }).catch((err)=>{
+    console.log(err)
+  })
 }
 
-function gard_left_spotc(){
-  let state=gard_left_spot.getAttribute("state");
-  if(state =="off"){
-      sgard_left_spot.style.top="5px";
-      gard_left_spot.style.backgroundColor="#24B940";
-      gard_left_spot.setAttribute("state","on");
-  }
-  else{
-      sgard_left_spot.style.top="21px";
-      gard_left_spot.style.backgroundColor="#C7C5E3";
-      gard_left_spot.setAttribute("state","off");
-  }
-  let href=gard_left_spot.getAttribute("href");
-  console.log(href);
-  if(href =="gard_left_on"){
-    var someUrl = "/gard_left_off";   $.ajax({                       
-      url: someUrl,  timeout: 1000  })
-      gard_left_spot.setAttribute("href","gard_left_off");
-  }
-  else{
-    var someUrl = "/gard_left_on";   $.ajax({  url: someUrl, timeout: 1000 })
-      gard_left_spot.setAttribute("href","gard_left_on");
-  }
-}
-function living_potc(){
-    let state=living_spot.getAttribute("state");
-    if(state =="off"){
+const living_potc=()=>{
+  let state=living_spot.getAttribute("state");
+   
+    if(state == "on"){
         slivingspot.style.top="5px";
         living_spot.style.backgroundColor="#24B940";
         living_spot.setAttribute("state","on");
@@ -202,80 +337,168 @@ function living_potc(){
         living_spot.style.backgroundColor="#C7C5E3";
         living_spot.setAttribute("state","off");
     }
-    let href=living_spot.getAttribute("href");
-    console.log(href);
-    if(href =="living_on"){
-      var someUrl = "/living_on";   $.ajax({                       
-        url: someUrl,  timeout: 1000  })
-        living_spot.setAttribute("href","living_off");
+   
+}
+const living_potcOnclick=()=>{
+  let state=living_spot.getAttribute("state");
+   
+    if(state == "off"){
+        slivingspot.style.top="5px";
+        living_spot.style.backgroundColor="#24B940";
+        living_spot.setAttribute("state","on");
     }
     else{
-      var someUrl = "/living_off";   $.ajax({  url: someUrl, timeout: 1000 })
-        living_spot.setAttribute("href","living_on");
+        slivingspot.style.top="21px";
+        living_spot.style.backgroundColor="#C7C5E3";
+        living_spot.setAttribute("state","off");
     }
-}
-
-/**/
-var email =document.getElementById("email");
-var pass = document.getElementById("Password");
-
-function passwordCheck(){
-    console.log(email.value);
-    console.log(pass.value);
-if(email.value =="kenanhomsi@gmail.com" && pass.value=="123456789"){
-    document.getElementById("log_a").setAttribute("href",".//info.html");
-}
-}
-
-/**/
-setInterval(function ( ) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        
-        document.getElementById("temperature").innerHTML = this.responseText;
-        document.getElementById("temperature_2").innerHTML = this.responseText;
-        
+    state=living_spot.getAttribute("state");
+    axios.patch('https://smarthome-api-nnmo.onrender.com/api/v1/singleService/',{
+      LED_living_Sensor:state
+  },{
+    headers: {
+      'Authorization': `Bearer ${token}`
     }
-    };
-    xhttp.open("GET", "/temperature", true);
-    xhttp.send();
-  }, 10000 ) ;
+  }).then((com)=>{
+    console.log(com)
 
-  setInterval(function ( ) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("humidity").innerHTML = this.responseText;
-      }
-    };
-    xhttp.open("GET", "/humidity", true);
-    xhttp.send();
-  }, 10000 ) ;
+  }).catch((err)=>{
+    console.log(err)
+  })
+   
+}
 
-  setInterval(function ( ) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("flame").innerHTML = this.responseText;
-      }
-    };
-    xhttp.open("GET", "/flame", true);
-    xhttp.send();
-  }, 10000 ) ;
-  setInterval(function ( ) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        var value=this.responseText;
-        if(value=="off"){
-            document.getElementById("gas").innerHTML = "idle";
-        }
-        if(value=="on"){
-            document.getElementById("gas").innerHTML = "active";
-        }
-      }
-    };
-    xhttp.open("GET", "/gas", true);
-    xhttp.send();
-  }, 10000 ) ;
+
+const myPromis=new Promise((res,rej)=>{
+  
+   axios.post('https://smarthome-api-nnmo.onrender.com/api/v1/auth/login', {
+      email:"kenanhomsi0959@gmail.com",
+    password:"123456789"
+  })
+  .then(function (response) {
+    
+    const { token } = response.data;
+   
+    res(token);
+  })
+  .catch(function (error) {
+    rej(error);
+  });
+
+
+});
+
+
+
+const onResolve=(res)=>{
+  token=res;
+
+  const getServicesPromise=new Promise((res2,rej2)=>{
+  
+     axios.get('https://smarthome-api-nnmo.onrender.com/api/v1/singleService/',{
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  })
+  .then((obj) => {
+    const Services=obj.data.service;
+    
+    res2(Services);
+  })
+    .catch(function (error) {
+      rej2(error);
+    });
+ });
+
+
+ getServicesPromise.then(
+  (res2)=>{
+    const Services= res2;
+    console.log(Services);
+    pool_spot.setAttribute("state",Services.LED_pool_livingSensor);
+    Balcony_spot.setAttribute("state",Services.LED_Balcony_Sensor);
+    kitchen_spot.setAttribute("state",Services.LED_kitchen_Sensor);
+    alarm.setAttribute("state",Services.securityStatue);
+    door.setAttribute("state",Services.DoorStatue);
+    living_spot.setAttribute("state",Services.LED_living_Sensor);
+    gard_left_spot.setAttribute("state",Services.LED_garden_left_Sensor);
+    gard_right_spot.setAttribute("state",Services.LED_garden_right_livingSensor);
+    document.getElementById("temperature").innerHTML =` ${Services.temperature} T`;
+    document.getElementById("temperature_2").innerHTML = ` ${Services.temperature} `;
+    document.getElementById("humidity").innerHTML = `${Services.humidity} H`;
+    document.getElementById("flame").innerHTML = Services.flameSensor;
+    pool_spotc();
+    Balcony_spotc();
+    gard_right_spotc();
+    gard_left_spotc();
+    kitchen_spotc();
+    alarmc();
+    doorc();
+    living_potc();
+    if(Services.gassSensor == 0)
+    {
+      document.getElementById("gas").innerHTML = "idle";
+    }else{
+      document.getElementById("flame").innerHTML = Services.gassSensor;
+    }
+  //   let LED_pool_livingSensor=pool_spot.getAttribute("state");
+  //   let LED_Balcony_Sensor=Balcony_spot.getAttribute("state");
+  //   let LED_kitchen_Sensor=kitchen_spot.getAttribute("state");
+  //   let securityStatue=alarm.getAttribute("state");
+  //   let DoorStatue=door.getAttribute("state");
+  //   let LED_garden_right_livingSensor=gard_right_spot.getAttribute("state");
+  //  let LED_garden_left_Sensor=gard_left_spot.getAttribute("state");
+  //  let LED_living_Sensor=living_spot.getAttribute("state");
+  //  console.log(LED_garden_right_livingSensor);
+  // let data={
+  //     LED_pool_livingSensor:LED_pool_livingSensor,
+  //     LED_Balcony_Sensor:LED_Balcony_Sensor,
+  //     LED_kitchen_Sensor:LED_kitchen_Sensor,
+  //     securityStatue:securityStatue,
+  //     DoorStatue:DoorStatue,
+  //     LED_garden_right_livingSensor:LED_garden_right_livingSensor,
+  //     LED_garden_left_Sensor:LED_garden_left_Sensor,
+  //     LED_living_Sensor:LED_living_Sensor,
+  //   }
+  //   console.log(data);
+  // //  axios.patch('https://smarthome-api-nnmo.onrender.com/api/v1/singleService/',data,{
+  // //   headers: {
+  // //     'Authorization': `Bearer ${token}`
+  // //   }
+  // // }).then((com)=>{
+  // //   console.log(com)
+
+  // // }).catch((err)=>{
+  // //   console.log(err)
+  // // })
+
+    
+  },
+  (rej2)=>{
+        console.log(`from second ${rej2}`)}
+)
+
+ }
+
+setInterval(()=>{
+  myPromis.then(onResolve,(rej)=>console.log(rej))
+},5000);
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+

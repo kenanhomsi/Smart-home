@@ -6,9 +6,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,500;0,600;0,800;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b5e12a678f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href=".//css//info.css">
+    <link rel="stylesheet" href="info.css">
     <link rel="icon" type="image/x-icon" href="icons8-s-others-32.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Smart Home</title>
 </head>
 <body>
@@ -68,7 +69,7 @@
                         living room
                     </div>
                     <a action="about:blank">
-                        <div id="living_spot" class="switch" state="off" onclick="living_potc()">
+                        <div id="living_spot" class="switch" state="off" onclick="living_potcOnclick()">
                             <span id="slivingspot" ></span>
                         </div>
                     </a>
@@ -78,7 +79,7 @@
                         <i class="fa-regular fa-lightbulb"></i><br>
                         kitchen spot
                     </div>
-                    <div id="kitchen_spot" class="switch" state="off" onclick="kitchen_spotc()" >
+                    <div id="kitchen_spot" class="switch" state="off" onclick="kitchen_spotcOnclick()" >
                         <span id="skitchenspot"></span>
                     </div>
                 </div>
@@ -87,7 +88,7 @@
                         <i class="fa-regular fa-lightbulb"></i><br>
                         garden left
                     </div>
-                    <div id="gard_left_spot" class="switch" state="off" onclick="gard_left_spotc()" >
+                    <div id="gard_left_spot" class="switch" state="off" onclick="gard_left_spotcOnclick()" >
                         <span id="sgard_left_spot"></span>
                     </div>
                 </div>
@@ -96,7 +97,7 @@
                         <i class="fa-regular fa-lightbulb"></i><br>
                         garden rigth
                     </div>
-                    <div id="gard_right_spot" class="switch" state="off" onclick="gard_right_spotc()" >
+                    <div id="gard_right_spot" class="switch" state="off" onclick="gard_right_spotcOnclick()" >
                         <span id="sgard_right_spot"></span>
                     </div>
                 </div>
@@ -107,7 +108,7 @@
                         <i class="fa-solid fa-door-open"></i><br>
                         Door
                     </div>
-                    <div id="door" class="switch" state="off" onclick="doorc()">
+                    <div id="door" class="switch" state="off" onclick="doorcOnclick()">
                         <span id="sdoor"></span>
                     </div>
                 </div>
@@ -116,7 +117,7 @@
                     <i class="fa-sharp fa-solid fa-shield-halved"></i><br>
                     alarm
                 </div>
-                <div id="alarm" class="switch" state="off" onclick="alarmc()" >
+                <div id="alarm" class="switch" state="off" onclick="alarmcOnclick()" >
                     <span id="salarm"></span>
                 </div>
             </div>
@@ -125,7 +126,7 @@
                     <i class="fa-regular fa-lightbulb"></i><br>
                     Balcony spot
                 </div>
-                <div id="Balcony_spot" class="switch" state="off" onclick=" Balcony_spotc()">
+                <div id="Balcony_spot" class="switch" state="off" onclick=" Balcony_spotcOnclick()">
                     <span id="sBalcony_spot"></span>
                 </div>
             </div>
@@ -134,7 +135,7 @@
                     <i class="fa-regular fa-lightbulb"></i><br>
                     pool spot
                 </div>
-                <div id="pool_spot" class="switch" state="off" onclick=" pool_spotc()">
+                <div id="pool_spot" class="switch" state="off" onclick=" pool_spotcOnclick()">
                     <span id="spool_spot"></span>
                 </div>
             </div>
@@ -142,6 +143,6 @@
            
         </div>
     </div>
-    <script src="mian.js"></script>
+    <script src="./mian.js" ></script>
 </body>
 </html>
