@@ -25,7 +25,19 @@ var skitchenspot=document.getElementById("skitchenspot");
 var sBalcony_spot=document.getElementById("sBalcony_spot");
 var spool_spot=document.getElementById("spool_spot");
 
+var email=document.getElementById("email");
+var Password=document.getElementById("Password");
 
+function passwordCheck(){
+  console.log(email);
+  console.log(Password);
+  if(email.value =="kenanhomsi0959@gmail.com" && Password.value =="123456789" ){
+    var logBtn=document.getElementById('log_a');
+    logBtn.setAttribute('href','info.html')
+  }else{
+   window.alert('Wrong  email or password');
+  }
+}
 
 
 const pool_spotc=()=>{
@@ -441,36 +453,7 @@ const onResolve=(res)=>{
     }else{
       document.getElementById("flame").innerHTML = Services.gassSensor;
     }
-  //   let LED_pool_livingSensor=pool_spot.getAttribute("state");
-  //   let LED_Balcony_Sensor=Balcony_spot.getAttribute("state");
-  //   let LED_kitchen_Sensor=kitchen_spot.getAttribute("state");
-  //   let securityStatue=alarm.getAttribute("state");
-  //   let DoorStatue=door.getAttribute("state");
-  //   let LED_garden_right_livingSensor=gard_right_spot.getAttribute("state");
-  //  let LED_garden_left_Sensor=gard_left_spot.getAttribute("state");
-  //  let LED_living_Sensor=living_spot.getAttribute("state");
-  //  console.log(LED_garden_right_livingSensor);
-  // let data={
-  //     LED_pool_livingSensor:LED_pool_livingSensor,
-  //     LED_Balcony_Sensor:LED_Balcony_Sensor,
-  //     LED_kitchen_Sensor:LED_kitchen_Sensor,
-  //     securityStatue:securityStatue,
-  //     DoorStatue:DoorStatue,
-  //     LED_garden_right_livingSensor:LED_garden_right_livingSensor,
-  //     LED_garden_left_Sensor:LED_garden_left_Sensor,
-  //     LED_living_Sensor:LED_living_Sensor,
-  //   }
-  //   console.log(data);
-  // //  axios.patch('https://smarthome-api-nnmo.onrender.com/api/v1/singleService/',data,{
-  // //   headers: {
-  // //     'Authorization': `Bearer ${token}`
-  // //   }
-  // // }).then((com)=>{
-  // //   console.log(com)
 
-  // // }).catch((err)=>{
-  // //   console.log(err)
-  // // })
 
     
   },
